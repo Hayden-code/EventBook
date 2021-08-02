@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+:root {
+  --defaultBackground: brown;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  font-size: 50px;
+}
+h3 {
+  font-size: 30px;
+  color: var(--defaultBackground);
+}
+p {
+  color: var(--defaultBackground);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/******** Landing Page Styling ********/
+.landingPage {
+  background-color: rgb(226, 226, 226);
+  display: flex;
+  position: fixed;
+  min-height: fit-content;
+  height: 100%;
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/******* Login/Sign up *******/
+.landingForm {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.landingInput {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Btn {
+  border: thin solid rgb(158, 158, 158);
+  border-radius: 5px;
+  background-color: var(--defaultBackground);
+  padding: 5px;
+  margin: 10px 0px 10px 0px;
+  font-size: 20px;
+}
+
+@media (min-width: 1px) {
+  h1 {
+    font-size: 40px;
   }
-  to {
-    transform: rotate(360deg);
+  .landingPage {
+    flex-direction: column;
+  }
+  .landingDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+}
+@media (min-width: 750px) {
+  h1 {
+    font-size: 60px;
+  }
+  .landingPage {
+    flex-direction: row;
+  }
+  .landingDiv {
+    position: relative;
+    width: 50%;
+    height: 100%;
   }
 }
