@@ -1,10 +1,12 @@
 import Header from "../components/header";
+import Navbar from "../components/navbar";
 
 function dashboard() {
   return (
     <div>
       <Header />
-      <h1>dashboard</h1>
+      <Navbar />
+      <h1 style={{ paddingLeft: "15%" }}>dashboard</h1>
     </div>
   );
 }
