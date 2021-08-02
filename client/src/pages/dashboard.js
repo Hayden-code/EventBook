@@ -1,4 +1,11 @@
+import Header from "../components/header";
+
 function dashboard() {
-  return <h1>dashboard</h1>;
+  return (
+    <div>
+      <Header />
+      <h1>dashboard</h1>
+    </div>
+  );
 }
 export default dashboard;

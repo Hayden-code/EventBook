@@ -1,5 +1,5 @@
 :root {
-  --defaultBackground: brown;
+  --defaultBackground: #008080;
 }
 
 h2 {
@@ -7,7 +7,6 @@ h2 {
 }
 h3 {
   font-size: 30px;
-  color: var(--defaultBackground);
 }
 p {
   color: var(--defaultBackground);
@@ -21,28 +20,6 @@ p {
   min-height: fit-content;
   height: 100%;
   width: 100%;
-}
-
-/******* Login/Sign up *******/
-.landingForm {
-  display: flex;
-  flex-direction: column;
-}
-
-.landingInput {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  margin: 10px;
-}
-
-.Btn {
-  border: thin solid rgb(158, 158, 158);
-  border-radius: 5px;
-  background-color: var(--defaultBackground);
-  padding: 5px;
-  margin: 10px 0px 10px 0px;
-  font-size: 20px;
 }
 
 @media (min-width: 1px) {
@@ -73,4 +50,38 @@ p {
     width: 50%;
     height: 100%;
   }
+}
+
+/******* Login/Sign up *******/
+.landingForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.landingInput {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.Btn {
+  border: thin solid rgb(158, 158, 158);
+  border-radius: 5px;
+  background-color: var(--defaultBackground);
+  padding: 5px;
+  margin: 10px 0px 10px 0px;
+  font-size: 20px;
+}
+
+/******** Header Styling ********/
+header {
+  padding: 10px 50px 10px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background-color: var(--defaultBackground);
+  color: white;
 }
