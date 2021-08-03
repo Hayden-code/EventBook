@@ -9,6 +9,9 @@ h2 {
 h3 {
   font-size: 30px;
 }
+h4 {
+  font-size: 20px;
+}
 p {
   color: var(--defaultBackground);
 }
@@ -89,6 +92,13 @@ header {
   color: white;
 }
 
+.headerText {
+  color: white;
+}
+
+.headerText :hover {
+  color: black;
+}
 /********* Navbar Styling *********/
 .navbar {
   padding-top: 50px;
@@ -104,11 +114,12 @@ header {
 
 .navLink {
   color: black;
+  padding: 10px;
 }
 
 .secondDiv {
   position: fixed;
-  bottom: 50px;
+  bottom: 30px;
   width: var(--navbarWidth);
 }
 /********* Dashboard Styling *********/
