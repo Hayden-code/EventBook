@@ -70,11 +70,12 @@ p {
 }
 
 .Btn {
+  color: white;
   border: thin solid rgb(158, 158, 158);
   border-radius: 5px;
   background-color: var(--defaultBackground);
   padding: 5px;
-  margin: 10px 0px 10px 0px;
+  margin: 10px;
   font-size: 20px;
   padding: 10px;
 }
@@ -151,4 +152,14 @@ header {
   border-bottom: 3px solid var(--defaultBackground);
   border-radius: 5px;
   padding: 5px;
+}
+
+/******** Logout Styling ********/
+.logout {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
