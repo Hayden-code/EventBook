@@ -154,12 +154,11 @@ header {
   padding: 5px;
 }
 
-/******** Logout Styling ********/
+/******** Logout & Settings Styling ********/
 .logout {
   height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
