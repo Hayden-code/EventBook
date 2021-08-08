@@ -1,0 +1,65 @@
+[
+    {
+        "userName": "test", 
+        "email":"test@test.com", 
+        "password":"testtest",
+        "hosting":[],
+        "invited": []
+    },
+    {
+        "userName": "Harry Jones", 
+        "email":"harryjones@essendon.com", 
+        "password":"testtest",
+        "hosting":[],
+        "invited": []
+    },
+    {
+        "userName": "Nik Cox", 
+        "email":"coxy@essendon.com", 
+        "password":"testtest",
+        "hosting":[],
+        "invited": []
+    },
+    {
+        "userName": "Peter Wright", 
+        "email":"twometerpeter@essendon.com", 
+        "password":"testtest",
+        "hosting":[],
+        "invited": []
+    },
+    {
+        "userName": "Jake Stringer", 
+        "email":"package@essendon.com", 
+        "password":"testtest",
+        "hosting":[],
+        "invited": []
+    },
+    {
+        "userName": "Darcy Parish", 
+        "email":"darcy@essendon.com", 
+        "password":"testtest",
+        "hosting":[],
+        "invited": []
+    },
+    {
+        "userName": "Anthony McDonald-Tipungwuti", 
+        "email":"tipaaaaaaaaaa@essendon.com", 
+        "password":"testtest",
+        "hosting":[],
+        "invited": []
+    },
+    {
+        "userName": "Dylan Shiel", 
+        "email":"gorgeous@essendon.com", 
+        "password":"testtest",
+        "hosting":[],
+        "invited": []
+    },
+    {
+        "userName": "Dyson Heppell", 
+        "email":"gathaboy@essendon.com", 
+        "password":"testtest",
+        "hosting":[],
+        "invited": []
+    }
+]
