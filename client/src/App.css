@@ -128,7 +128,7 @@ header {
   position: relative;
   left: var(--navbarWidth);
   width: 70%;
-
+  min-height: 700px;
   padding: 10px 50px;
 }
 
@@ -161,4 +161,16 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/******* Your Events Page *******/
+.yourEvents {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+
+.eventDiv {
+  height: 300px;
 }

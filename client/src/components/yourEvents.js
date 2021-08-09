@@ -1,22 +1,22 @@
 import EventTile from "./eventTile";
 import React from "react";
 // import { QUERY_EVENT, QUERY_USER } from "../utils/queries";
+import Auth from "../utils/auth";
 
 function YourEvents() {
-  const events = [
-    {
-      _id: 1,
-      title: "title",
-    },
-    {
-      _id: 2,
-      title: "title2",
-    },
-  ];
+  const user = Auth.getProfile().data;
+
   return (
-    <div>
-      <h1>YourEventsRoute</h1>
-      <EventTile events={events} />
+    <div className="yourEvents">
+      <div className="eventDiv">
+        <h1>Hosting</h1>
+        <EventTile events={user.hosting} />
+      </div>
+      <div className="eventDiv">
+        <h1>Invited</h1>
+
+        <EventTile events={user.invited} />
+      </div>
     </div>
   );
 }

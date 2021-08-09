@@ -1,9 +1,10 @@
-// Import usernames
+// import { QUERY_USER, QUERY_USERS } from "../utils/queries";
 // import _ from "lodash";
-// import React from "react";
+import React from "react";
 import { Dropdown } from "semantic-ui-react";
+// import { useQuery } from "@apollo/client";
 
-// const user =
+// const user = useQuery(QUERY_USER);
 // const guests = _.map(addressDefinitions.state, (state, index) => ({
 //   key: addressDefinitions.state_abbr[index],
 //   text: state,

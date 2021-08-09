@@ -7,6 +7,18 @@ export const LOGIN_USER = gql`
       user {
         _id
         userName
+        hosting {
+          _id
+          title
+          description
+          theme
+        }
+        invited {
+          _id
+          title
+          description
+          theme
+        }
       }
     }
   }
