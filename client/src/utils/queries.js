@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_USER = gql`
-    query user ($userName: String){
-        user($userName: String){
+    query user($userName: String){
+        User($userName: String){
             _id
             userName
             password
@@ -24,7 +24,7 @@ export const QUERY_USER = gql`
 
 export const QUERY_USERS = gql`
   query allUsers {
-    users {
+    User {
       _id
       userName
     }
@@ -33,10 +33,33 @@ export const QUERY_USERS = gql`
 
 export const QUERY_EVENTS = gql`
   query event {
-    event {
+    Event {
       _id
       title
       description
+      theme
+      host {
+        _id
+        userName
+      }
+      invitedGuests {
+        _id
+        userName
+      }
+      goingGuests {
+        _id
+        userName
+      }
+      isPrivate
+    }
+  }
+`;
+
+export const QUERY_EVENT = gql`
+  query event (){
+    Event {
+      _id
+      title
       theme
       host {
         _id

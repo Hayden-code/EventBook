@@ -57,19 +57,3 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
-
-// type Host {
-//     _id: ID!
-//     hostID: User
-//     eventID: [Event]
-// }
-
-// type Guest {
-//     _id: ID!
-//     guestID: [User]
-//     eventID: INT
-//
-// ******* Mutations *******
-// host: Host
-// guest: [Guest]
-// }

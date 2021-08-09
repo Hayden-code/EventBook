@@ -27,7 +27,7 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    editUser: async (parent, { userName, email, password }, context) => {
+    editUser: async (parent, { email, userName, password }, context) => {
       if (context.user) {
         const userUpdate = await User.findOneAndUpdate(
           { _id: context.user._id },
@@ -39,13 +39,13 @@ const resolvers = {
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-      const pw = await User.passwordCheck(password);
-      if (!user | !pw) {
+      const pw = await user.checkPassword(password);
+      if (!user || !pw) {
         throw new AuthenticationError(
           "Invalid details. Please check email and password and try again."
         );
       }
-      const token = signToken(profile);
+      const token = signToken(user);
       return { token, user };
     },
     addEvent: async (

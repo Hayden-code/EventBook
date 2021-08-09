@@ -1,4 +1,4 @@
-import Login from "../components/login";
+import LoginComponent from "../components/login";
 import Signup from "../components/signup";
 import React, { useState } from "react";
 
@@ -17,7 +17,7 @@ function LandingPage() {
         <h1>Welcome to EventBook</h1>
       </div>
       <div className="landingDiv">
-        {toggle && <Login />}
+        {toggle && <LoginComponent />}
         {!toggle && <Signup />}
         <button
           className="Btn"

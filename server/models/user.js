@@ -32,7 +32,7 @@ userSchema.pre("save", async function (next) {
 });
 
 userSchema.methods.checkPassword = async function (password) {
-  return bcrypt.compare(password, this.checkPassword);
+  return bcrypt.compare(password, this.password);
 };
 
 const User = model("User", userSchema);
