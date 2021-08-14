@@ -17,7 +17,8 @@ export default function Settings() {
             style={{ marginLeft: "10px" }}
             className="eventInput"
             placeholder="New Email"
-            pattern=".+@globex\.com"
+            type="email"
+            pattern="^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
           />
         </label>
         <label className="eventLabel">
@@ -30,6 +31,9 @@ export default function Settings() {
             minLength="8"
           />
         </label>
+        <button className="Btn" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

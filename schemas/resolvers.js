@@ -48,18 +48,13 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addEvent: async (
-      parent,
-      { title, description, theme, isPrivate },
-      context
-    ) => {
+    addEvent: async (parent, { title, description, theme }, context) => {
       if (context.user) {
         const event = await Event.create({
           title,
           description,
           theme,
           host: context.user.userName,
-          isPrivate,
         });
         await User.findOneAndUpdate(
           { _id: context.user._id },

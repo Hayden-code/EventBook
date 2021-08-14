@@ -1,9 +1,10 @@
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
-// const path = require("path");
+const path = require("path");
 const db = require("./config/connection");
 const { typeDefs, resolvers } = require("./schemas");
 const authMiddleWare = require("./utils/auth");
+require("dotenv").config();
 
 const PORT = process.env.PORT || 3001;
 
@@ -23,7 +24,12 @@ async function startApolloServer(typeDefs, resolvers) {
   app.use(express.json());
   server.applyMiddleware({
     app,
-    // path: "/graphql",
+    path: "/graphql",
+  });
+  // ... other app.use middleware
+  app.use(express.static(path.join(__dirname, "client", "build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
   });
   await new Promise((resolve) => app.listen({ port: PORT }, resolve));
   console.log(`API server running on port ${PORT}!`);

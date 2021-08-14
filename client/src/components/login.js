@@ -48,7 +48,8 @@ function LoginComponent() {
             className="landingInput"
             placeholder="Email"
             name="email"
-            // pattern="/^\S+@\S+\.\S+$/"
+            type="email"
+            pattern="^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             onChange={handleInputChange}
             required
           />

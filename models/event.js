@@ -11,7 +11,6 @@ const eventSchema = new Schema({
   },
   theme: {
     type: String,
-    required: true,
   },
   host: {
     type: String,

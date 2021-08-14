@@ -105,3 +105,10 @@ dist
 
 # vs code styling
 .vscode
+
+.DS_Store
+node_modules/
+.env
+*.orig
+.idea/
+.vscode/

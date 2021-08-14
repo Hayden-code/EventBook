@@ -2,14 +2,29 @@ import { ThemeDropdown, GuestList } from "../components/dropdownMenus";
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_EVENT } from "../utils/mutations";
+import { QUERY_EVENTS } from "../utils/queries";
+// import Auth from "../utils/auth";
 
 export default function CreateEvent() {
   const [formState, setFormState] = useState({
     title: "",
     description: "",
     theme: "",
+    // host: Auth.getProfile().data.userName,
   });
-  const [AddEvent, { data, loading, error }] = useMutation(ADD_EVENT);
+  const [AddEvent, { data, loading, error }] = useMutation(ADD_EVENT, {
+    update(cache, { data: { AddEvent } }) {
+      try {
+        const { events } = cache.readQuery({ query: QUERY_EVENTS });
+        cache.writeQuery({
+          query: QUERY_EVENTS,
+          data: { events: [AddEvent, ...events] },
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  });
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
 
@@ -45,6 +60,7 @@ export default function CreateEvent() {
           <input
             className="eventInput"
             placeholder="e.g. Picnic"
+            name="title"
             value={formState.title}
             onChange={handleInputChange}
           ></input>
@@ -52,13 +68,19 @@ export default function CreateEvent() {
           <textarea
             className="eventInput"
             placeholder="e.g. Hey guys, I am having a picnic, would love for everyone to make it!"
+            name="description"
             value={formState.description}
             onChange={handleInputChange}
           ></textarea>
           <label className="eventLabel">Guests:</label>
           <GuestList className="eventInput" />
           <label className="eventLabel">Theme:</label>
-          <ThemeDropdown className="eventInput" />
+          <ThemeDropdown
+            className="eventInput"
+            name="theme"
+            value={formState.theme}
+            onChange={handleInputChange}
+          />
           <button className="Btn" type="submit">
             CreateEvent
           </button>

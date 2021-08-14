@@ -7,7 +7,7 @@ class AuthService {
 
   login(token) {
     localStorage.setItem("token", token);
-    window.location.assign("/dashboard");
+    window.location.assign("/dashboard/your-events");
   }
 
   getToken() {
