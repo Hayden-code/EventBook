@@ -84,13 +84,15 @@ p {
 header {
   height: 80px;
   padding: 10px 30px 10px 30px;
+  background-color: var(--defaultBackground);
+  color: white;
+}
+.headerDiv {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  background-color: var(--defaultBackground);
-  color: white;
 }
 
 .headerText {

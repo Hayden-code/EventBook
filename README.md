@@ -43,7 +43,7 @@ Technologies used include but are not limited to:
 # Usage
 
 Install dependencies then run npm/yarn develop in the command line to run locally. <br>
-Otherwise visit my website: https://eventboook.herokuapp.com/dashboard/your-events where the app is currently live and accessable to the public.
+Otherwise visit my website: https://eventboook.herokuapp.com/ where the app is currently live and accessable to the public.
 
 # Contributing
 
