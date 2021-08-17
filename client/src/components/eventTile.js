@@ -1,17 +1,35 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function EventTile(events) {
-  const eventsLoop = () =>
-    events.map((event) => (
-      <div>
-        <h1>yo</h1>
-        <div key={event._id}>
-          <h3>{event.title}</h3>
-          <p>{event.description}</p>
-        </div>
+const EventList = (hostingOrInvited) => {
+  let eventsToRender = [];
+
+  if (eventsToRender.length > []) {
+    return (
+      <div className="yourEvents">
+        {eventsToRender.map((event) => (
+          <Link key={event.id} link={"event/" + event.id}>
+            <div className="eventDiv">
+              <div
+                className="eventTheme"
+                style={{ backgroundColor: event.theme }}
+              ></div>
+              <p className="eventText">Host: {event.host}</p>
+              <h3 className="eventText">{event.title}</h3>
+              <p className="eventText">{event.description}</p>
+            </div>
+          </Link>
+        ))}
       </div>
-    ));
-  return eventsLoop;
-}
+    );
+  } else {
+    return (
+      <p className="noEvents">
+        You have no events at this time, create an event to see it displayed
+        here.
+      </p>
+    );
+  }
+};
 
-export default EventTile;
+export default EventList;
