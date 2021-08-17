@@ -10,7 +10,7 @@ export default function Header() {
         <Link className="headerText" to="/dashboard/your-events">
           <h2>EventBook</h2>
         </Link>
-        <Link className="headerText" to="/dashboard/your-events">
+        <Link className="headerText" to="/dashboard/explore">
           <h3>Explore</h3>
         </Link>
       </div>
