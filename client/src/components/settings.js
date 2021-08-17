@@ -1,7 +1,17 @@
+// import { useMutation } from "@apollo/client";
+// import { EDIT_USER } from "../utils/mutations";
+// import jwt from "jwt-decode"; // import dependency
+import Auth from "../utils/auth";
+
 export default function Settings() {
+  // let input;
+  // const [user] = useMutation(EDIT_USER, {});
+  // console.log(res.data.token);
+  const user = Auth.getProfile().data;
   return (
     <div className="logout">
-      <h1>Settings</h1>
+      <h1 style={{ textAlign: "center" }}>Settings</h1>
+      <p>Change credentials for {user.userName}</p>
       <form className="landingForm">
         <label className="eventLabel">
           Change Username:
