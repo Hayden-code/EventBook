@@ -6,7 +6,7 @@
 
 # User-Story
 
-    I want to create an event that I can invite all my friends to and we can discuss the plans and save the date.
+I want to create an event that I can invite all my friends to and we can discuss the plans and save the date.
 
 # Table of contents
 
