@@ -1,6 +1,7 @@
 :root {
   --defaultBackground: #008080;
-  --navbarWidth: 20%;
+  --navbarWidth: 15%;
+  --landingPageColor: rgb(226, 226, 226);
 }
 
 h2 {
@@ -15,10 +16,14 @@ h4 {
 p {
   color: var(--defaultBackground);
 }
+a {
+  text-decoration: none;
+  max-width: fit-content;
+}
 
 /******** Landing Page Styling ********/
 .landingPage {
-  background-color: rgb(226, 226, 226);
+  background-color: var(--landingPageColor);
   display: flex;
   position: fixed;
   min-height: fit-content;
@@ -83,7 +88,6 @@ p {
 /******** Header Styling ********/
 header {
   height: 80px;
-  padding: 10px 30px 10px 30px;
   background-color: var(--defaultBackground);
   color: white;
 }
@@ -93,6 +97,8 @@ header {
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  padding: 0px 30px 0px 30px;
+  height: 100%;
 }
 
 .headerText {
@@ -119,6 +125,9 @@ header {
   color: black;
   padding: 10px;
 }
+.navLink :hover {
+  color: var(--defaultBackground);
+}
 
 .secondDiv {
   position: fixed;
@@ -129,13 +138,16 @@ header {
 .dashboard {
   position: relative;
   left: var(--navbarWidth);
-  width: 70%;
+  width: 85%;
   min-height: 700px;
-  padding: 10px 50px;
+  display: flex;
+  justify-content: center;
 }
 
 /********* Create Event Styling ***********/
 .createEvent {
+  height: fit-content;
+  width: 80%;
   border: thin solid grey;
   border-radius: 5px;
   margin: 20px;
@@ -158,21 +170,72 @@ header {
 
 /******** Logout & Settings Styling ********/
 .logout {
-  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: fit-content;
+  width: 80%;
+  border: thin solid grey;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 20px;
+}
+.logout > p {
+  font-size: 20px;
 }
 
 /******* Your Events Page *******/
+.eventsDiv {
+  margin: 20px;
+  width: 80%;
+  height: fit-content;
+  width: 80%;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.eventsDiv > p {
+  font-size: 20px;
+  text-align: center;
+}
+
 .yourEvents {
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  height: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .eventDiv {
-  height: 300px;
+  height: 250px;
+  width: 250px;
+  background-color: var(--landingPageColor);
+  margin: 20px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  transition: 0.2s;
+  overflow: scroll;
+}
+.eventDiv:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.eventTheme {
+  border-radius: 10px 10px 0px 0px;
+  height: 40%;
+}
+
+.eventText {
+  padding: 0px;
+  margin: 0px;
+  color: black;
+  padding: 5px;
+}
+
+.noEvents {
+  font-size: 20px;
+  color: black;
+  margin-top: 20px;
+  text-align: center;
 }
