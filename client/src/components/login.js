@@ -6,8 +6,15 @@ import { LOGIN_USER } from "../utils/mutations";
 function LoginComponent() {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { data, loading, error }] = useMutation(LOGIN_USER);
-  if (loading) return "Loading...";
-  if (error) return `Error! ${error.message}`;
+  if (loading) {
+    document.body.style.cursor = "progress";
+  } else {
+    document.body.style.cursor = "default";
+  }
+  if (error) {
+    console.log(error.message);
+    return <p>Something went wrong check credentials and try again!</p>;
+  }
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
