@@ -22,7 +22,7 @@ export default function Dashboard() {
           <Route path="/dashboard/create-event">
             <CreateEvent />
           </Route>
-          <Route path="/dashboard/your-events">
+          <Route path="/dashboard/your-events/:userId">
             <YourEvents />
           </Route>
           <Route path="/dashboard/event/:eventId">
