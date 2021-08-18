@@ -7,6 +7,7 @@ import Navbar from "../components/navbar";
 import { Route, Switch } from "react-router-dom";
 import Explore from "../components/explore";
 import Footer from "../components/footer";
+import EventPage from "../components/eventPage";
 
 export default function Dashboard() {
   return (
@@ -23,6 +24,9 @@ export default function Dashboard() {
           </Route>
           <Route path="/dashboard/your-events">
             <YourEvents />
+          </Route>
+          <Route path="/dashboard/event/:eventId">
+            <EventPage />
           </Route>
           <Route path="/dashboard/settings">
             <Settings />
