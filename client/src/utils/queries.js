@@ -57,7 +57,7 @@ export const QUERY_EVENTS = gql`
 
 export const QUERY_EVENT = gql`
   query event($eventId: ID) {
-    event(eventId: $eventId) {
+    event(_id: $eventId) {
       _id
       title
       theme
