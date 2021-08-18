@@ -7,9 +7,9 @@ export default function Navbar() {
         <Link className="navLink" to="/dashboard/create-event">
           <h3>Create Event</h3>
         </Link>
-        <Link className="navLink" to="/dashboard/your-events">
+        {/* <Link className="navLink" to="/dashboard/your-events">
           <h3>Your Events</h3>
-        </Link>
+        </Link> */}
       </div>
       <div className="secondDiv">
         <Link className="navLink" to="/dashboard/settings">

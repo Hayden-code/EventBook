@@ -12,9 +12,7 @@ const eventSchema = new Schema({
   theme: {
     type: String,
   },
-  host: {
-    type: String,
-  },
+  host: { type: Schema.Types.ObjectId, ref: "User" },
   guests: [
     {
       userName: {

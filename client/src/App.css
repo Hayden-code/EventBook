@@ -46,6 +46,26 @@ a {
     text-align: center;
     flex-direction: column;
   }
+  .eventDiv {
+    width: 100%;
+  }
+  footer {
+    background-color: var(--landingPageColor);
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+  }
+  .navbar {
+    display: none;
+  }
+  .dashboard {
+    position: relative;
+    left: 0px;
+    width: 100%;
+  }
 }
 @media (min-width: 750px) {
   h1 {
@@ -58,6 +78,23 @@ a {
     position: relative;
     width: 50%;
     height: 100%;
+  }
+  footer {
+    display: none;
+  }
+  .navbar {
+    display: flex;
+  }
+  .dashboard {
+    position: relative;
+    left: var(--navbarWidth);
+    width: 85%;
+  }
+}
+
+@media (min-width: 853px) {
+  .eventDiv {
+    width: 250px;
   }
 }
 
@@ -110,12 +147,9 @@ header {
 }
 /********* Navbar Styling *********/
 .navbar {
-  padding-top: 50px;
   background-color: rgb(230, 230, 230);
-  position: absolute;
-  height: 10000px;
-  max-height: 100%;
-  display: flex;
+  position: fixed;
+  min-height: 100%;
   flex-direction: column;
   width: var(--navbarWidth);
   text-align: center;
@@ -123,7 +157,6 @@ header {
 
 .navLink {
   color: black;
-  padding: 10px;
 }
 .navLink :hover {
   color: var(--defaultBackground);
@@ -209,7 +242,7 @@ header {
 
 .eventDiv {
   height: 250px;
-  width: 250px;
+
   background-color: var(--landingPageColor);
   margin: 20px;
   padding-bottom: 5px;

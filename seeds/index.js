@@ -9,20 +9,18 @@ db.once("open", async () => {
     await Event.deleteMany({});
 
     await User.create(userSeed);
-    await Event.create(eventSeed);
-    // for (let i = 0; i < eventSeed.length; i++) {
-    //   const { _id, host, invitedGuests, goingGuests } = await Event.create(
-    //     eventSeed[i]
-    //   );
-    //   const user = await User.findOneAndUpdate(
-    //     { userName: host },
-    //     {
-    //       $addToSet: {
-    //         event: _id,
-    //       },
-    //     }
-    //   );
-    // }
+
+    for (let i = 0; i < eventSeed.length; i++) {
+      const { _id, host } = await Event.create(eventSeed[i]);
+      await User.findOneAndUpdate(
+        { userName: host },
+        {
+          $addToSet: {
+            hosting: _id,
+          },
+        }
+      );
+    }
   } catch (err) {
     console.log(err);
     process.exit(1);

@@ -12,8 +12,15 @@ async function startApolloServer(typeDefs, resolvers) {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
+
     context: authMiddleWare,
   });
+
+  // const server = new ApolloServer({
+  //   typeDefs,
+  //   resolvers,
+  //   context: authMiddleWare,
+  // });
   await server.start();
   const app = express();
   app.use(

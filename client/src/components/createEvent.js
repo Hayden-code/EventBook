@@ -28,7 +28,7 @@ export default function CreateEvent() {
   // });
 
   const [addEvent, { data, loading, error }] = useMutation(ADD_EVENT);
-
+  console.log(data);
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
 

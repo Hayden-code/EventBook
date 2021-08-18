@@ -4,29 +4,28 @@ const secret =
   process.env.SECRET || "some secret passphrase here for local development";
 const expiration = "2h";
 
-module.exports = {
-  authMiddleware: function ({ req }) {
-    let token = req.body.token || req.query.token || req.headers.authorization;
+module.exports = ({ req }) => {
+  return {
+    authMiddleware: function () {
+      let token =
+        req.body.token || req.query.token || req.headers.authorization;
 
-    if (req.headers.authorization) {
-      token = token.split(" ").pop().trim();
-    }
+      if (req.headers.authorization) {
+        token = token.split(" ").pop().trim();
+      }
 
-    if (!token) {
+      if (!token) {
+        return req;
+      }
+
+      try {
+        const { data } = jwt.verify(token, secret, { maxAge: expiration });
+        return data;
+      } catch (err) {
+        console.log("Invalid token", err);
+      }
+
       return req;
-    }
-
-    try {
-      const { data } = jwt.verify(token, secret, { maxAge: expiration });
-      req.user = data;
-    } catch {
-      console.log("Invalid token");
-    }
-
-    return req;
-  },
-  signToken: function ({ email, userName, _id }) {
-    const payload = { email, userName, _id };
-    return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
-  },
+    },
+  };
 };

@@ -32,8 +32,8 @@ export const QUERY_USERS = gql`
 `;
 
 export const QUERY_EVENTS = gql`
-  query event {
-    Event {
+  query allEvents {
+    allEvents {
       _id
       title
       description
@@ -56,7 +56,7 @@ export const QUERY_EVENTS = gql`
 `;
 
 export const QUERY_EVENT = gql`
-  query event($eventId: ID!) {
+  query event($eventId: ID) {
     event(eventId: $eventId) {
       _id
       title

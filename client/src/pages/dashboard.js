@@ -6,6 +6,7 @@ import Header from "../components/header";
 import Navbar from "../components/navbar";
 import { Route, Switch } from "react-router-dom";
 import Explore from "../components/explore";
+import Footer from "../components/footer";
 
 export default function Dashboard() {
   return (
@@ -31,6 +32,7 @@ export default function Dashboard() {
           </Route>
         </Switch>
       </div>
+      <Footer />
     </div>
   );
 }

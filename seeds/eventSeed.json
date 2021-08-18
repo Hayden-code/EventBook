@@ -3,8 +3,16 @@
         "title": "Harry's Birthday", 
         "description":"Hey guys, come on down have a few beers and celebrate Harry's 21st birthday.", 
         "theme":"Fire",
-        "host": "Harry Jones",
-        "invitedGuests": ["Nik Cox", "Peter Wright", "Jake Stringer", "Darcy Parish", "Anthony McDonald-Tipungwuti", "Dylan Shiel", "Dyson Heppell"],
+        "invitedGuests": 
+        [
+            {"userName": "Nik Cox"}, 
+            {"userName": "Peter Wright"}, 
+            {"userName": "Jake Stringer"}, 
+            {"userName": "Darcy Parish"}, 
+            {"userName": "Anthony McDonald-Tipungwuti"},
+            {"userName": "Dylan Shiel"}, 
+            {"userName": "Dyson Heppell"}
+        ],
         "goingGuests": [],
         "isPrivate": "true"
     },
@@ -12,8 +20,14 @@
         "title": "Jake Stringer 300th game", 
         "description":"Hey guys, get keen Stringer is going to play is 300th game this weekend.", 
         "theme":"Fire",
-        "host": "Harry Jones",
-        "invitedGuests": ["Nik Cox", "Peter Wright", "Jake Stringer", "Darcy Parish", "Anthony McDonald-Tipungwuti"],
+        "invitedGuests": 
+        [
+            {"userName": "Nik Cox"}, 
+            {"userName": "Peter Wright"}, 
+            {"userName": "Jake Stringer"}, 
+            {"userName": "Darcy Parish"}, 
+            {"userName": "Anthony McDonald-Tipungwuti"}
+        ],
         "goingGuests":["Dylan Shiel"],
         "isPrivate": "true"
     }

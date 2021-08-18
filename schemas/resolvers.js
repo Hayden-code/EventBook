@@ -1,7 +1,7 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Event } = require("../models");
 const { findOneAndUpdate, findOneAndDelete } = require("../models/user");
-const { signToken } = require("../utils/auth");
+const { signToken } = require("../utils/signToken");
 
 const resolvers = {
   Query: {
@@ -49,20 +49,23 @@ const resolvers = {
       return { token, user };
     },
     addEvent: async (parent, { title, description, theme }, context) => {
-      if (context.user) {
+      console.log("Adding event");
+      const user = context.authMiddleware();
+      // console.log(user);
+      if (user) {
         const event = await Event.create({
           title,
           description,
           theme,
-          host: context.user.userName,
+          host: user._id,
         });
         await User.findOneAndUpdate(
-          { _id: context.user._id },
+          { _id: user._id },
           { $addToSet: { hosting: event.id } }
         );
+        console.log("Event", event);
         return event;
       }
-      throw new AuthenticationError("You need to be logged in...");
     },
     editEvent: async (
       parent,

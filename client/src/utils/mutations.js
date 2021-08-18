@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const LOGIN_USER = gql`
-  mutation Login($email: String!, $password: String!) {
+  mutation Login($email: String, $password: String) {
     login(email: $email, password: $password) {
       token
       user {
@@ -24,8 +24,20 @@ export const LOGIN_USER = gql`
   }
 `;
 
+export const EDIT_USER = gql`
+  mutation editUser($email: String, $userName: String, $password: String) {
+    editUser(email: $email, userName: $userName, password: $password) {
+      token
+      user {
+        _id
+        userName
+      }
+    }
+  }
+`;
+
 export const ADD_USER = gql`
-  mutation AddUser($email: String!, $userName: String!, $password: String!) {
+  mutation AddUser($email: String, $userName: String, $password: String) {
     addUser(email: $email, userName: $userName, password: $password) {
       token
       user {
@@ -37,18 +49,8 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_EVENT = gql`
-  mutation AddEvent(
-    $title: String!
-    $description: String
-    $theme: String
-    $host: String
-  ) {
-    addEvent(
-      title: $title
-      description: $description
-      theme: $theme
-      host: $host
-    ) {
+  mutation AddEvent($title: String, $description: String, $theme: String) {
+    addEvent(title: $title, description: $description, theme: $theme) {
       _id
       title
       description
@@ -57,15 +59,6 @@ export const ADD_EVENT = gql`
         _id
         userName
       }
-      invitedGuests {
-        _id
-        userName
-      }
-      goingGuests {
-        _id
-        userName
-      }
-      isPrivate
     }
   }
 `;
@@ -78,18 +71,8 @@ export const EDIT_EVENT = gql`
       description
       theme
       host {
-        _id
         userName
       }
-      invitedGuests {
-        _id
-        userName
-      }
-      goingGuests {
-        _id
-        userName
-      }
-      isPrivate
     }
   }
 `;
